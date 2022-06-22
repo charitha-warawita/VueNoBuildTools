@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Test-vue-101</title>
+    </head>
+    <body>
+        
+        <script src="https://unpkg.com/vue@3"></script>
+
+        <div id="app">{{ message }}</div>
+<p>
+        <div id="app2">{{ message }}</div>
+    </p>     
+        <script>
+          const { createApp } = Vue
+        
+          createApp({
+            data() {
+              return {
+                message: 'Hello Vue 1234!'
+              }
+            }
+          }).mount('#app')
+        </script>
+
+<script>
+
+    createApp({
+      data() {
+        return {
+          message: 'Hello Vue 12345678!'
+        }
+      }
+    }).mount('#app2')
+  </script>
+    </body>
+</html>

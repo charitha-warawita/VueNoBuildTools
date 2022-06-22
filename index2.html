@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Test-vue-101</title>
+    </head>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" id="theme-styles">
+    <body> 
+
+<script type="importmap">
+    {
+      "imports": {
+        "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+      }
+    }
+  </script>
+  
+  <div id="app"> <h1>{{ message }}</h1></div>
+    <hr>
+  <div id="appComponent">{{ message }}</div>
+    <hr>
+  <div id="appComponent2">{{ message }}</div>
+    <hr>
+
+
+
+  <script type="module">
+    import { createApp } from 'vue'
+  
+    createApp({
+      data() {
+        return {
+          message: 'Hello Vue - index 2 -sample!'
+        }
+      }
+    }).mount('#app')
+  </script>
+
+<script type="module">
+    import { createApp } from 'vue'
+    import MyComponent from './components/my-component.js'
+    import MyComponent2 from './components/my-component2.js'
+
+  //mount component1
+    createApp(MyComponent).mount('#appComponent')
+    //then Component 2
+    createApp(MyComponent2).mount('#appComponent2')
+
+  </script>
+
+  </body>
+  </html>
